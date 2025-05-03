@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -46,6 +46,36 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 6.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 6.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 262 52% 60%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 199 70% 57%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 262 50% 14%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 262 52% 55%;
+  }
 }
 
 @layer base {
@@ -55,6 +85,7 @@
 
   body {
     @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', 'Poppins', sans-serif;
   }
   
   body::-webkit-scrollbar {
@@ -78,6 +109,7 @@
   }
 }
 
+/* Animation classes */
 .animate-delay-100 {
   animation-delay: 100ms;
 }
@@ -100,4 +132,54 @@
 
 .text-gradient {
   @apply bg-gradient-to-r from-techhub-purple to-techhub-blue bg-clip-text text-transparent;
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-lg;
+}
+
+.dark .glass-card {
+  @apply bg-gray-900/80 backdrop-blur-md border border-gray-800/50;
+}
+
+.neomorphism {
+  @apply bg-white rounded-xl shadow-[5px_5px_15px_rgba(0,0,0,0.1),-5px_-5px_15px_rgba(255,255,255,0.7)];
+}
+
+.dark .neomorphism {
+  @apply bg-gray-800 shadow-[5px_5px_15px_rgba(0,0,0,0.5),-5px_-5px_15px_rgba(255,255,255,0.05)];
+}
+
+/* Particle background */
+.particles-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+@keyframes floatParticle {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(10px, 10px); }
+  100% { transform: translate(0, 0); }
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: floatParticle 8s infinite ease-in-out;
+}
+
+.typing-cursor::after {
+  content: '|';
+  animation: cursor 1s infinite;
+}
+
+@keyframes cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }

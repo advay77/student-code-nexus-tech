@@ -20,8 +20,11 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ["Inter", "sans-serif"],
+				sans: ["Inter", "Poppins", "Manrope", "sans-serif"],
 				mono: ["Fira Code", "monospace"],
+				poppins: ["Poppins", "sans-serif"],
+				inter: ["Inter", "sans-serif"],
+				manrope: ["Manrope", "sans-serif"]
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -123,6 +126,42 @@ export default {
 					"50%": {
 						opacity: "0.5"
 					}
+				},
+				'float': {
+					"0%, 100%": {
+						transform: "translateY(0)"
+					},
+					"50%": {
+						transform: "translateY(-10px)"
+					}
+				},
+				'typing': {
+					"from": {
+						width: "0"
+					},
+					"to": {
+						width: "100%"
+					}
+				},
+				'scale-in': {
+					"0%": {
+						transform: "scale(0.95)",
+						opacity: "0"
+					},
+					"100%": {
+						transform: "scale(1)",
+						opacity: "1"
+					}
+				},
+				'slide-up': {
+					"0%": {
+						transform: "translateY(20px)",
+						opacity: "0"
+					},
+					"100%": {
+						transform: "translateY(0)",
+						opacity: "1"
+					}
 				}
 			},
 			animation: {
@@ -130,7 +169,11 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out forwards',
 				'slide-in': 'slide-in 0.5s ease-out forwards',
-				'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+				'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'float': 'float 3s ease-in-out infinite',
+				'typing': 'typing 3.5s steps(40, end)',
+				'scale-in': 'scale-in 0.5s ease-out forwards',
+				'slide-up': 'slide-up 0.5s ease-out forwards'
 			}
 		}
 	},

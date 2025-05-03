@@ -35,7 +35,7 @@ const SessionsContent = () => {
     },
     {
       title: "Dynamic Programming",
-      time: "7:00 PM - 8:30 PM IST",
+      time: "9:20 PM - 10:30 PM IST",
       day: "Friday",
       description: "Breaking down complex problems into simpler subproblems with optimization techniques."
     }
@@ -72,61 +72,63 @@ const SessionsContent = () => {
     <section className="py-16 md:py-24">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Sessions</h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-[#9b59b6] to-[#00FFFF] bg-clip-text text-transparent">Our Sessions</h1>
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             Tech Hub offers structured learning sessions in both Data Structures & Algorithms and Web Development.
             Join our regular practice to boost your skills and prepare for technical challenges.
           </p>
         </div>
 
         <Tabs defaultValue="dsa" className="w-full">
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2">
-            <TabsTrigger value="dsa">Daily DSA Sessions</TabsTrigger>
-            <TabsTrigger value="webdev">Weekend Web Dev</TabsTrigger>
+          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 bg-black/40 border border-[#00FFFF]/20">
+            <TabsTrigger value="dsa" className="data-[state=active]:bg-[#9b59b6]/20 data-[state=active]:text-[#00FFFF] data-[state=active]:shadow-[0_0_10px_rgba(0,255,255,0.3)]">Daily DSA Sessions</TabsTrigger>
+            <TabsTrigger value="webdev" className="data-[state=active]:bg-[#9b59b6]/20 data-[state=active]:text-[#00FFFF] data-[state=active]:shadow-[0_0_10px_rgba(0,255,255,0.3)]">Weekend Web Dev</TabsTrigger>
           </TabsList>
           
           <TabsContent value="dsa" className="mt-8">
-            <div className="bg-white rounded-xl shadow-lg p-8 mb-12">
+            <div className="bg-black/40 backdrop-blur-md border border-[#9b59b6]/30 rounded-xl shadow-[0_4px_20px_rgba(155,89,182,0.2)] p-8 mb-12">
               <div className="flex flex-col md:flex-row gap-8 items-start">
                 <div className="md:w-1/3">
-                  <div className="bg-techhub-soft-purple p-4 rounded-lg mb-6">
-                    <Database className="h-12 w-12 text-techhub-purple mb-4" />
-                    <h3 className="text-2xl font-semibold mb-2">Daily DSA Practice</h3>
-                    <p className="text-gray-600">
+                  <div className="bg-[#9b59b6]/10 border border-[#9b59b6]/30 p-4 rounded-lg mb-6">
+                    <Database className="h-12 w-12 text-[#9b59b6] mb-4 drop-shadow-[0_0_5px_rgba(155,89,182,0.5)]" />
+                    <h3 className="text-2xl font-semibold mb-2 text-[#00FFFF]">Daily DSA Practice</h3>
+                    <p className="text-gray-300">
                       Consistent daily practice sessions to master data structures and algorithms. Each day focuses on a different concept.
                     </p>
                   </div>
                   
                   <div className="space-y-4">
                     <div className="flex items-center">
-                      <Clock className="h-5 w-5 text-techhub-purple mr-3" />
-                      <span className="text-gray-700">1.5 hours per session</span>
+                      <Clock className="h-5 w-5 text-[#00FFFF] mr-3" />
+                      <span className="text-gray-300">1.5 hours per session</span>
                     </div>
                     <div className="flex items-center">
-                      <Users className="h-5 w-5 text-techhub-purple mr-3" />
-                      <span className="text-gray-700">Limited to 15 active participants</span>
+                      <Users className="h-5 w-5 text-[#00FFFF] mr-3" />
+                      <span className="text-gray-300">Limited to 15 active participants</span>
                     </div>
                     <div className="flex items-center">
-                      <ChevronRight className="h-5 w-5 text-techhub-purple mr-3" />
-                      <span className="text-gray-700">2-3 practice problems per session</span>
+                      <ChevronRight className="h-5 w-5 text-[#00FFFF] mr-3" />
+                      <span className="text-gray-300">2-3 practice problems per session</span>
                     </div>
                   </div>
                 </div>
                 
                 <div className="md:w-2/3 space-y-6">
-                  <h4 className="text-xl font-medium border-b border-gray-200 pb-3">Weekly Schedule</h4>
+                  <h4 className="text-xl font-medium border-b border-[#00FFFF]/20 pb-3 text-white">Weekly Schedule</h4>
                   
                   <div className="space-y-6">
                     {dsaSessions.map((session, index) => (
-                      <div key={index} className="bg-gray-50 p-4 rounded-lg">
+                      <div key={index} className="bg-black/60 border border-[#00FFFF]/10 hover:border-[#00FFFF]/40 p-4 rounded-lg transition-all duration-300 group hover:shadow-[0_0_15px_rgba(0,255,255,0.15)]">
                         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                           <div>
-                            <h5 className="font-medium text-lg">{session.day}: {session.title}</h5>
-                            <p className="text-techhub-purple font-medium">{session.time}</p>
+                            <h5 className="font-medium text-lg text-white group-hover:text-[#00FFFF] transition-colors">{session.day}: {session.title}</h5>
+                            <p className="text-[#9b59b6] font-medium">{session.time}</p>
                           </div>
-                          <Button variant="outline" className="mt-3 md:mt-0">Join Session</Button>
+                          <Button variant="outline" className="mt-3 md:mt-0 border-[#00FFFF]/50 text-[#00FFFF] hover:bg-[#00FFFF]/10 hover:text-white hover:shadow-[0_0_10px_rgba(0,255,255,0.3)]">
+                            Join Session
+                          </Button>
                         </div>
-                        <p className="mt-2 text-gray-600">{session.description}</p>
+                        <p className="mt-2 text-gray-400">{session.description}</p>
                       </div>
                     ))}
                   </div>
@@ -136,52 +138,52 @@ const SessionsContent = () => {
           </TabsContent>
           
           <TabsContent value="webdev" className="mt-8">
-            <div className="bg-white rounded-xl shadow-lg p-8 mb-12">
+            <div className="bg-black/40 backdrop-blur-md border border-[#00FFFF]/30 rounded-xl shadow-[0_4px_20px_rgba(0,255,255,0.2)] p-8 mb-12">
               <div className="flex flex-col md:flex-row gap-8 items-start">
                 <div className="md:w-1/3">
-                  <div className="bg-techhub-soft-blue p-4 rounded-lg mb-6">
-                    <Code2 className="h-12 w-12 text-techhub-blue mb-4" />
-                    <h3 className="text-2xl font-semibold mb-2">Weekend Web Dev</h3>
-                    <p className="text-gray-600">
+                  <div className="bg-[#00FFFF]/10 border border-[#00FFFF]/30 p-4 rounded-lg mb-6">
+                    <Code2 className="h-12 w-12 text-[#00FFFF] mb-4 drop-shadow-[0_0_5px_rgba(0,255,255,0.5)]" />
+                    <h3 className="text-2xl font-semibold mb-2 text-[#9b59b6]">Weekend Web Dev</h3>
+                    <p className="text-gray-300">
                       Intensive weekend workshops focused on modern web development technologies and practices.
                     </p>
                   </div>
                   
                   <div className="space-y-4">
                     <div className="flex items-center">
-                      <Calendar className="h-5 w-5 text-techhub-blue mr-3" />
-                      <span className="text-gray-700">Saturday & Sunday Sessions</span>
+                      <Calendar className="h-5 w-5 text-[#9b59b6] mr-3" />
+                      <span className="text-gray-300">Saturday & Sunday Sessions</span>
                     </div>
                     <div className="flex items-center">
-                      <Clock className="h-5 w-5 text-techhub-blue mr-3" />
-                      <span className="text-gray-700">3-4 hours per day</span>
+                      <Clock className="h-5 w-5 text-[#9b59b6] mr-3" />
+                      <span className="text-gray-300">3-4 hours per day</span>
                     </div>
                     <div className="flex items-center">
-                      <ChevronRight className="h-5 w-5 text-techhub-blue mr-3" />
-                      <span className="text-gray-700">Hands-on project work</span>
+                      <ChevronRight className="h-5 w-5 text-[#9b59b6] mr-3" />
+                      <span className="text-gray-300">Hands-on project work</span>
                     </div>
                   </div>
                 </div>
                 
                 <div className="md:w-2/3">
-                  <h4 className="text-xl font-medium border-b border-gray-200 pb-3 mb-6">Upcoming Workshops</h4>
+                  <h4 className="text-xl font-medium border-b border-[#9b59b6]/20 pb-3 mb-6 text-white">Upcoming Workshops</h4>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {webDevSessions.map((session, index) => (
-                      <Card key={index} className="hover:shadow-lg transition-shadow">
+                      <Card key={index} className="bg-black/60 border border-[#9b59b6]/20 hover:border-[#9b59b6]/50 transition-all duration-300 hover:shadow-[0_0_15px_rgba(155,89,182,0.2)] backdrop-blur-md group">
                         <CardContent className="p-6">
-                          <h5 className="font-semibold text-lg mb-2">{session.title}</h5>
-                          <p className="text-techhub-blue font-medium mb-3">{session.date}</p>
+                          <h5 className="font-semibold text-lg mb-2 text-white group-hover:text-[#9b59b6] transition-colors">{session.title}</h5>
+                          <p className="text-[#00FFFF] font-medium mb-3">{session.date}</p>
                           <div className="mb-4">
-                            <h6 className="text-sm text-gray-500 mb-2">Topics Covered:</h6>
+                            <h6 className="text-sm text-gray-400 mb-2">Topics Covered:</h6>
                             <ul className="list-disc list-inside space-y-1">
                               {session.topics.map((topic, i) => (
-                                <li key={i} className="text-gray-600">{topic}</li>
+                                <li key={i} className="text-gray-300">{topic}</li>
                               ))}
                             </ul>
                           </div>
-                          <p className="text-sm text-gray-600 mb-4">{session.description}</p>
-                          <Button className="w-full bg-techhub-blue hover:bg-techhub-light-blue">Register</Button>
+                          <p className="text-sm text-gray-400 mb-4">{session.description}</p>
+                          <Button className="w-full bg-gradient-to-r from-[#9b59b6] to-[#00FFFF] hover:shadow-[0_0_15px_rgba(155,89,182,0.3)] border-none">Register</Button>
                         </CardContent>
                       </Card>
                     ))}
@@ -191,7 +193,7 @@ const SessionsContent = () => {
             </div>
             
             <div className="text-center mt-8">
-              <Button className="bg-techhub-blue hover:bg-techhub-light-blue">
+              <Button className="bg-gradient-to-r from-[#00FFFF] to-[#9b59b6] hover:shadow-[0_0_15px_rgba(0,255,255,0.3)]">
                 <CalendarIcon className="mr-2 h-4 w-4" />
                 View Full Session Calendar
               </Button>
